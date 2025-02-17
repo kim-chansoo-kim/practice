@@ -41,5 +41,7 @@ print(temp) # [1995,1996,1995,2000,1996,2000]
 황석준 : 29세
 김찬수 : 25세
 """
+for keys ,values in dict.items():
+    print(f'{keys} : {2025 - values}세\n', end='')
 
 # 여기 아래 코드 작성 !
