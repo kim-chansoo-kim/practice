@@ -10,24 +10,24 @@
 # 아래는 제가 구현한 연결리스트 클래스 입니다.
 # 한줄 한줄 주석을 달아서 이게 뭔지, 어떤 동작인지 설명해보세요.
 
-class LinkedList:
-    def __init__(self):
-        self.head = None  
-        self.nodes = []     
+class LinkedList: # LinkedList 클래스
+    def __init__(self): # 생성자 메서드
+        self.head = None # 머리는 None이다
+        self.nodes = [] # 리스트 생성
 
-    class Node:
-        def __init__(self, data):
-            self.data = data
-            self.prev = None
-            self.next = None  
+    class Node: # 노드 클래스
+        def __init__(self, data): # 생성자 메서드
+            self.data = data # 노드에 들어갈 데이터지정
+            self.prev = None # 이전노드를 가리키는 포인터
+            self.next = None # 다음노드를 가리키는 포인터  
 
-        def __str__(self):
-            return f"{self.data}"
+        def __str__(self): # 객체를 문자열로 변환하는 메서드
+            return f"{self.data}" # 노드의 데이터를 반환
 
     def push_back(self, data):
         new_node = self.Node(data)  
-        if not self.head:
-            self.head = new_node  
+        if not self.head: # 머리가 아니면
+            self.head = new_node  # self.head는 new_node가 된다
             prevNode = None
         else:
             self.nodes[-1].next = new_node  
@@ -45,9 +45,9 @@ class LinkedList:
                 break
         if isFind == False: return    
 
-        if curNode.prev != None:
-            new_node.prev = curNode.prev
-            curNode.prev.next = new_node
+        if curNode.prev != None: # 만약 curNode.prev가 None이 아니라면
+            new_node.prev = curNode.prev # curNode.prev가 new_node.prev로 바뀜
+            curNode.prev.next = new_node # curNode.prev.next가 new_node가 됨
             curNode.prev = new_node
             new_node.next = curNode
         else : 
