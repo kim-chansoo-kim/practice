@@ -24,13 +24,13 @@ class LinkedList: # LinkedList 클래스
         def __str__(self): # 객체를 문자열로 변환하는 메서드
             return f"{self.data}" # 노드의 데이터를 반환
 
-    def push_back(self, data):
-        new_node = self.Node(data)  
+    def push_back(self, data): # 매개변수 설정?
+        new_node = self.Node(data)  # 뉴노드에 노드의 데이터를 넣는다
         if not self.head: # 머리가 아니면
             self.head = new_node  # self.head는 new_node가 된다
-            prevNode = None
-        else:
-            self.nodes[-1].next = new_node  
+            prevNode = None # prev노드는 None이다
+        else: # 머리가 맞으면
+            self.nodes[-1].next = new_node 
             prevNode = self.nodes[-1]
         self.nodes.append(new_node)  
         self.nodes[-1].prev = prevNode
@@ -46,7 +46,7 @@ class LinkedList: # LinkedList 클래스
         if isFind == False: return    
 
         if curNode.prev != None: # 만약 curNode.prev가 None이 아니라면
-            new_node.prev = curNode.prev # curNode.prev가 new_node.prev로 바뀜
+            new_node.prev = curNode.prev # new_node.prev가 curNode.prev로 바뀜
             curNode.prev.next = new_node # curNode.prev.next가 new_node가 됨
             curNode.prev = new_node
             new_node.next = curNode
