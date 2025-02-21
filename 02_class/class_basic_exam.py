@@ -46,5 +46,5 @@ class cut_string:
 
 # 위에 클래스를 생성해서 , 아래 코드의 에러 메세지를 없애주세요 ~
 cut = cut_string('강황석준')
-print(cut.cutting(2))
+print(cut.cutting(1))
 # 출력 ['강','황석준']

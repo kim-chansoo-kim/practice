@@ -81,9 +81,9 @@ tip) 계산 히스토리를 기록할 수 있다면?
 
 # 첼린지
 class calc_ver03(calc_ver02):
-    def __init__(self):
+    def __init__(self,start_value=0):
         super().__init__()
-        self.accum = 0 
+        self.accum = start_value
 
     def mul(self, c):
         if self.accum == 0:
@@ -98,6 +98,6 @@ class calc_ver03(calc_ver02):
         self.accum /= d
         return self.accum
     
-new_calc = calc_ver03()
+new_calc = calc_ver03(4)
 print(new_calc.add(3))
 print(new_calc.sub(2))
