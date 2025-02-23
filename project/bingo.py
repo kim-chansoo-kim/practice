@@ -35,11 +35,10 @@ def bingo():
         
         for i in bingoBoard:
                 for j in i:
-                    if bingoBoard[j] == True:
+                    if bingoState[j] == True:
                         print('O', end=' ')
                     else : print('X', end=' ')
                 print()
                 print()
-        
         
         
