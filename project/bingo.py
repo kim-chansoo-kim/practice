@@ -42,3 +42,4 @@ def bingo():
                 print()
         
         
+# 스코어 해결
