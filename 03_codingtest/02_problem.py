@@ -30,7 +30,7 @@ def solution(r_str, d_str):
         
     for d in d_str:
         dDict[d] = dDict.get(d, 0) + 1
-    for r in d_str:
+    for r in r_str:
         rDict[r] = rDict.get(r, 0) + 1
     for str in rDict:
         if rDict.get(str, 0) > dDict.get(str, 0):
