@@ -37,7 +37,6 @@ def solution(hp,monsters,attack):
             hp -= monsters['리본돼지'] # 리본돼지한테 맞기
         elif action == 2:
             hp -= monsters['슬라임'] # 슬라임 한테 맞기
-            
 
         if hp == 0:
             return 'YOU DIED'
