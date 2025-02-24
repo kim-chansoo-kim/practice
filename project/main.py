@@ -7,7 +7,6 @@ while True:
     command = int(input())
 
     if command == 1:
-        # 가위바위보 시작
         print('가위바위보')
         pass
     elif command == 2:
