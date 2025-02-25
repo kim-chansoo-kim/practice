@@ -6,10 +6,10 @@ def bingo():
     bingoState = {}  # 숫자 체크 상태
     score = 0  # 빙고 점수
     
-    # 1️⃣ 1~51 사이에서 중복 없이 16개 숫자 뽑기
+    # 1~51 사이에서 중복 없이 16개 숫자 뽑기
     numbers = random.sample(range(1, 51), SIZE * SIZE)
     
-    # 2️⃣ 빙고판에 숫자 채우기 & 상태 초기화
+    # 빙고판에 숫자 채우기 & 상태 초기화
     index = 0
     for row in range(SIZE):
         for col in range(SIZE):
@@ -17,7 +17,7 @@ def bingo():
             bingoState[numbers[index]] = False
             index += 1
 
-    # 3️⃣ 빙고판 출력 함수
+    # 빙고판 출력 함수
     def print_board():
         for row in bingoBoard:
             for num in row:
@@ -25,7 +25,7 @@ def bingo():
             print()
         print()
 
-    # 4️⃣ 빙고 체크 함수
+    # 빙고 체크 함수
     def check_bingo():
         nonlocal score
         new_score = 0  # 한 번에 중복 점수 방지
@@ -50,7 +50,7 @@ def bingo():
             score = new_score
             print(f"현재 빙고 개수: {score}")
 
-    # 5️⃣ 게임 루프
+    # 게임 루프
     while True:
         try:
             print("Your turn")
@@ -68,7 +68,7 @@ def bingo():
                 print("빙고판에 없는 숫자입니다!\n")
 
             if score >= 3:  # 3줄 완성 시 게임 종료
-                print("🎉 게임 클리어! 🎉")
+                print("게임 클리어! ")
                 break
         except ValueError:
             print("잘못된 입력입니다. 숫자를 입력하세요!")
