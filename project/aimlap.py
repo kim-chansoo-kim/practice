@@ -11,7 +11,7 @@ btn = None
 ent = None
 
 def cc():
-    global k, btn  # k를 전역 변수로 선언
+    global k, btn
     if k < num_t:
         k += 1
         btn.destroy()
@@ -22,6 +22,10 @@ def cc():
         btn.destroy()
         lab = Label(win, text="Clear " + str(dif_sec) + "초")
         lab.grid(column=0, row=1, columnspan=2, pady=20)
+        
+        restart_btn = Button(win, text="다시 시작", command=start_game)
+        restart_btn.grid(column=0, row=2, columnspan=2)
+
 
 def ran_btn():
     global btn
@@ -34,17 +38,21 @@ def ran_btn():
     btn.place(relx=relx, rely=rely)
 
 def btn_f():
-    global num_t, start, k  # k를 초기화
-    num_t = int(ent.get())
-    k = 1  # 게임 시작 시 k 초기화
+    global num_t, start, k
+    try:
+        num_t = int(ent.get())
+    except ValueError:
+        ent.delete(0, END)
+        ent.insert(0, "숫자만!")
+        return
     
-    # 기존 UI 요소 제거
+    k = 1
     for wg in win.grid_slaves():
         wg.destroy()
-    
     win.geometry("500x500")
     ran_btn()
     start = datetime.now()
+
 
 def start_game():
     global win, ent  # tkinter 창과 입력 필드를 전역으로 설정
